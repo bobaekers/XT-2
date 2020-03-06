@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>DASHBOARD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div>
+    <h1>Musk to Mars</h1>
+  </div>
+  <div class="grid">
+    <div class="grid-item1">
+      <img src="images/gravity.png" class="image gravity">
+      <h2 class="titel">gravity 5,2 g/s</h2>
+    </div>
+    <div class="grid-item2">
+      <img src="images/food.png" class="image food">
+      <h2 class="titel">food 200 kg</h2>
+    </div>
+    <div class="grid-item3">
+      <img src="images/atmosphere.png" class="image atmosphere">
+      <h2 class="titel">atmosphere 101.325 kPa</h2>
+    </div>
+  </div>
+  <script src="js/anime.min.js"></script>
+  <script> 
+    //De drie afbeeldingen moeten bewegen
+    anime({
+      targets: '.gravity', //Target het element met class gravity voor deze beweging
+      keyframes: [ 
+        {translateY: -40}, //Bepaal waar het element heen moet bewegen a.d.h.v. cijfers
+        {translateX: 250},
+        {translateY: 40},
+        {translateX: 0},
+        {translateY: 0}
+      ],
+      duration: 4000, //Bepaal hoelang een beweging duurt
+      easing: 'easeOutElastic(1, .8)',
+      loop: true //De beweging moet zich blijven herhalen
+    });
+
+    //Hier laat ik het plaatje ronddraaien
+    anime({
+      targets: '.food',
+      rotate: '1turn', //Bepaal hoe de rotatie eruit ziet, de duration slaat op 1 turn.
+      duration: 4000,
+      easing: 'easeOutElastic(1, .8)', //Bepaal richting waarin het element beweegt
+      loop: true
+    });
+
+    anime({
+      targets: '.atmosphere',
+      keyframes: [
+        {translateY: 0}, //Ik heb de waarden van 'gravity' omgedraaid, waardoor 'atmosphere' de tegenovergestelde kant opdraait.
+        {translateX: 0},
+        {translateY: 40},
+        {translateX: 250},
+        {translateY: -40}
+      ],
+      duration: 4000,
+      easing: 'easeOutElastic(1, .8)',
+      loop: true
+    });
+  </script>
+</body>
+</html>

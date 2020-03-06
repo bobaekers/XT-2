@@ -1,0 +1,95 @@
+body {
+  box-sizing: border-box;
+	height: 100%;
+  background-color: #241721;
+  background-repeat: no-repeat;
+}
+h1 {
+  margin-top: 84px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Microsoft JhengHei UI Light, sans-serif;
+  color: #cc1e2c;
+  font-size: 36px;
+  line-height: 1.4em;
+  font-weight: 700;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  margin-top: 124px;
+  margin-right: auto;
+  margin-left: auto;
+  grid-auto-columns: 1fr; 
+  grid-column-gap: 44px; /*Maak verticale ruimte tussen items in grid*/
+  grid-template-columns: 1fr; /* Zorg ervoor dat column grid uit een verticaal grid bestaat, waarin de items onder elkaar komen*/
+  grid-template-rows: auto;
+}
+.grid-item {
+  margin-bottom: 64px;
+}
+.image {
+  width: 150px;
+  height: 150px;
+}
+.titel {
+  margin-top: 24px;
+  font-family: Microsoft JhengHei UI Light, sans-serif;
+  color: #ff5435;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1365px) {
+  .grid {
+    grid-template-columns: 1fr; /*Houd de elementen binnen grid onder elkaar t.o.v. kleine media query*/
+    grid-template-rows: auto auto auto; /*De elementen moeten onder elkaar komen in de staat waarin ze zich al verkeerden*/
+    grid-row-gap: 44px;
+  }
+  body {
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/free-vector/space-with-stars-universe-space-infinity-background_78474-99.jpg?size=626&ext=jpg');
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1919px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr; /*Verdeel de items in drie gelijke grids in de grid zelf, naast elkaar*/
+    grid-template-rows: auto; /*Zet items in grid naast elkaar op gelijke lijn*/
+    grid-row-gap: 44px;
+  }
+  body {
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://cdn.eso.org/images/screen/eso1509a.jpg');
+  }
+  
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 3000px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 44px;
+  }
+  body {
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://data.1freewallpapers.com/download/mars-planet-space-brown-surface.jpg');
+  }
+}
+
+.grid-item1 {
+  justify-self: center;
+}
+
+.grid-item2 {
+  justify-self: center;
+}
+
+.grid-item3 {
+  justify-self: center;
+}
+/*Zorg ervoor dat de animated plaatjes en tekst in de bovenstaande grids, vertical centered blijven.*/
